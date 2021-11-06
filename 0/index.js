@@ -1,10 +1,21 @@
+const puppeteer = require('puppeteer');
+
+(async function () {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    await page.goto('https://en.wikipedia.org/wiki/%22Hello,_World!%22_program');
+    await page.screenshot({ path: './screenshot.png'});
+    browser.close();
+}) ();
+
+/* Web scraping with axios and cheerio
 const PORT = 8000;
 const axios = require('axios');
 const cheerio = require('cheerio');
 const express = require('express');
 
 const app = express();
-const url = 'https://www.theguardian.com/uk'
+const url = ''
 
 axios(url)
     .then(response => {
@@ -26,3 +37,4 @@ axios(url)
 
 
 app.listen(PORT, () => console.log(`server running on PORT ${PORT}`))
+*/

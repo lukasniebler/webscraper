@@ -15,6 +15,7 @@ describe('Login Page', () => {
 
     beforeEach(async () => {
         page = await browser.newPage();
+        page.setDefaultTimeout(config.timeout);
         pageModel = new LoginPageModel(page, config);
         await pageModel.go();
     })
